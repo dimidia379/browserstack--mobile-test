@@ -17,6 +17,14 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     String key = mobileConfig.key();
     String url = mobileConfig.url();
 
+    public static URL getBrowserstackURL() {
+        try {
+            return new URL("http://hub.browserstack.com/wd/hub");
+        } catch (MalformedURLException e) {
+            throw new RuntimeException();
+        }
+    }
+
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
@@ -41,12 +49,5 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         // and desired capabilities defined above
         return new AndroidDriver(getBrowserstackURL(), desiredCapabilities);
 
-    }
-    public static URL getBrowserstackURL() {
-        try {
-            return new URL("http://hub.browserstack.com/wd/hub");
-        } catch (MalformedURLException e) {
-            throw new RuntimeException();
-        }
     }
 }
