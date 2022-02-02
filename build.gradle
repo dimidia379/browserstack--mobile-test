@@ -69,7 +69,7 @@ task real(type: Test) {
     useJUnitPlatform {
         includeTags 'real'
     }
-    //systemProperty "deviceHost", "real"
+    systemProperty "deviceHost", "real"
 }
 
 task selenoid(type: Test) {

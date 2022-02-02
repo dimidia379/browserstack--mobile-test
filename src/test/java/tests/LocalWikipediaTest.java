@@ -1,16 +1,18 @@
-package tests.local;
+package tests;
 
 import io.appium.java_client.MobileBy;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-@Tag("local_android")
-public class LocalWikipediaTest extends LocalTestBase {
+
+@Tags({@Tag("selenoid"), @Tag("real"), @Tag("local")})
+public class LocalWikipediaTest extends TestBase {
 
     @Test
     @DisplayName("При старте приложения отображаются 4 экрана Getting started")
