@@ -62,14 +62,14 @@ task local(type: Test) {
     useJUnitPlatform {
         includeTags 'local'
     }
-    systemProperty "deviceHost", "locale"
+    systemProperty "deviceHost", "local"
 }
 
 task real(type: Test) {
     useJUnitPlatform {
         includeTags 'real'
     }
-    systemProperty "deviceHost", "real"
+    //systemProperty "deviceHost", "real"
 }
 
 task selenoid(type: Test) {

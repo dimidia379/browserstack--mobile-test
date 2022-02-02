@@ -1,7 +1,6 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.MobileConfig;
 import config.RealConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
@@ -41,6 +40,7 @@ public class RealMobileDriver implements WebDriverProvider {
                 getAbsolutePath("src/test/resources/apk/app-alpha-universal-release.apk"));
 
         return new AndroidDriver(getLocalURL(), desiredCapabilities);
+
 
     }
 
