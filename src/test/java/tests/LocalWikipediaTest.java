@@ -17,19 +17,19 @@ public class LocalWikipediaTest extends TestBase {
     @Test
     @DisplayName("При старте приложения отображаются 4 экрана Getting started")
     void gettingStartedScreens() {
-        final String firstScreenTitleName = "The Free Encyclopedia …in over 300 languages";
-        final String secondScreenTitleName = "New ways to explore";
-        final String thirdScreenTitleName = "Reading lists with sync";
-        final String fourthScreenTitleName = "Send anonymous data";
+        String firstScreenTitleName = "The Free Encyclopedia …in over 300 languages";
+        String secondScreenTitleName = "New ways to explore";
+        String thirdScreenTitleName = "Reading lists with sync";
+        String fourthScreenTitleName = "Send anonymous data";
 
         WebElement firstScreenTitle = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"));
-        WebElement secondScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(1);
-        WebElement thirdScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(2);
-        WebElement fourthScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(3);
-
         WebElement secondScreenTitle = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"));
         WebElement thirdScreenTitle = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"));
         WebElement fourthScreenTitle = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView"));
+
+        WebElement secondScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(1);
+        WebElement thirdScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(2);
+        WebElement fourthScreenDotNavigation = $(MobileBy.id("org.wikipedia.alpha:id/view_onboarding_page_indicator")).$$(MobileBy.className("android.widget.LinearLayout")).get(3);
 
         SoftAssertions softly = new SoftAssertions();
         softly.assertThat(firstScreenTitle.getText().equals(firstScreenTitleName));
